@@ -24,14 +24,28 @@ isDead = (health) => {
 };
 
 function fight(player1, player2, player1Health, player2Health) {
-    // TODO Figure out what condition needs to be true in the while loop
-    while (true) {
+    
+    while(true) {
         let attacker = chooseOption(player1, player2);
-        if (attacker === player1) {
+        
+        if(attacker === player1) {
             player2Health = attackPlayer(player2Health);
             logHealth(player2, player2Health);
-            isDead(player2Health);
-            //switch statement
-        }
+            
+            if(isDead(player2Health)) {
+                logDeath(player1, player2);
+                break;
+            }
+        
+        } else {
+            player1Health = attackPlayer(player1Health);
+            logHealth(player1, player1Health);
+            if(isDead(player1Health)) {
+                logDeath(player2, player1);
+                break;
+            }
+        };
     };
 };
+
+fight("Justin", "Nate Dogg", 100, 100);
