@@ -1,3 +1,13 @@
+const fightBtn = document.getElementById("fightBtn");
+const results = document.getElementById("results");
+
+fightBtn.addEventListener("click", function(){
+    let playerOneName = document.getElementById("playerOneName").value;
+    let playerTwoName = document.getElementById("playerTwoName").value;
+    results.innerHTML = "";
+    fight(playerOneName, playerTwoName, 100, 100);
+});
+
 randomDamage = () => {
     return Math.floor(Math.random() * 10);
 };
@@ -13,10 +23,20 @@ const attackPlayer = function(health) {
 
 logHealth = (player, health) => {
     console.log(`${player} health: ${health}`);
+    results.innerHTML += `
+        <li>
+            <div> ${player} health: ${health} </div>
+        </li> 
+    `;
 };
 
 logDeath = (winner, loser) => {
     console.log(`${winner} defeated ${loser}`);
+    results.innerHTML += `
+        <li>
+            <div> ${winner} defeated ${loser} </div>
+        </li> 
+    `;
 };
 
 isDead = (health) => {
@@ -24,14 +44,13 @@ isDead = (health) => {
 };
 
 function fight(player1, player2, player1Health, player2Health) {
-    
+
     while(true) {
         let attacker = chooseOption(player1, player2);
         
         if(attacker === player1) {
             player2Health = attackPlayer(player2Health);
             logHealth(player2, player2Health);
-            
             if(isDead(player2Health)) {
                 logDeath(player1, player2);
                 break;
@@ -48,4 +67,5 @@ function fight(player1, player2, player1Health, player2Health) {
     };
 };
 
-fight("Justin", "Nate Dogg", 100, 100);
+
+// fight("Colette", "Emily", 100, 100);
