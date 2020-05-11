@@ -22,19 +22,18 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* border: 1px solid black; */
 }
 
 .left {
     display: flex;
     flex-direction: column;
-    /* border: 1px solid red; */
+    text-align: center;
 }
 
 .right {
     display: flex;
     flex-direction: column;
-    /* border: 1px solid green; */
+    text-align: center;
 }
 
 form {
@@ -43,7 +42,7 @@ form {
 
 .center {
     margin: 0 auto;
-    /* border: 1px solid blue; */
+    
 }
 
 .results {

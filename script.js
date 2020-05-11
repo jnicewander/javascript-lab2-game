@@ -1,9 +1,14 @@
 const fightBtn = document.getElementById("fightBtn");
 const results = document.getElementById("results");
+let playerOneName = prompt('Enter Player One Name: ');
+let playerTwoName = prompt('Enter Player Two\'s Name: ');
+document.getElementById("playerOneName").innerHTML = playerOneName;
+document.getElementById("playerTwoName").innerHTML = playerTwoName;
+
+
+
 
 fightBtn.addEventListener("click", function(){
-    let playerOneName = document.getElementById("playerOneName").value;
-    let playerTwoName = document.getElementById("playerTwoName").value;
     results.innerHTML = "";
     fight(playerOneName, playerTwoName, 100, 100);
 });
