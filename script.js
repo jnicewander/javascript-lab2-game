@@ -1,5 +1,7 @@
 randomDamage = () => {
-    return Math.floor(Math.random() * 10);
+// Changed Math.floor to Math.ceil after Ellen told Michael that most of us messed up the 1 - 10 thing.
+// Change was made after due date unfortunately.
+    return Math.ceil(Math.random() * 10);
 };
 
 chooseOption = (opt1, opt2) => {
