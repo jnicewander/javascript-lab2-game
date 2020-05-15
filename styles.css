@@ -11,6 +11,7 @@ html, body {
 }
 
 ul {
+    columns: 4;
     list-style: none;
 }
 
@@ -28,12 +29,20 @@ header {
     display: flex;
     flex-direction: column;
     text-align: center;
+    margin-left: 4rem;
 }
 
 .right {
     display: flex;
     flex-direction: column;
     text-align: center;
+    margin-right: 4rem;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    max-width: 10vw;
 }
 
 form {
@@ -43,8 +52,4 @@ form {
 .center {
     margin: 0 auto;
     
-}
-
-.results {
-    /* border: 1px solid yellow; */
 }
